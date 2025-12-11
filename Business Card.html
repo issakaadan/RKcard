@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rawand Kaadan – Business Consultant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050506;
+      --card-bg: #050506;
+      --border-accent: linear-gradient(130deg, #f5f5f5, #9ca3af 40%, #e5e5e5 90%);
+      --text-main: #f9fafb;
+      --text-muted: #a3a3a3;
+      --text-soft: #d4d4d4;
+      --radius-xl: 22px;
+      --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px;
+      background:
+        radial-gradient(circle at top, #16181d 0, #050506 52%),
+        radial-gradient(circle at bottom, #020203 0, #050506 45%);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+    }
+
+    .card-page {
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .card-border {
+      padding: 1.3px;
+      border-radius: calc(var(--radius-xl) + 2px);
+      background: var(--border-accent);
+    }
+
+    .business-card {
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at top, rgba(250, 250, 250, 0.12), transparent 58%),
+        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.45), transparent 70%),
+        var(--card-bg);
+      box-shadow: var(--shadow-soft);
+      padding: 26px 22px 22px;
+      border: 1px solid rgba(24, 24, 27, 0.9);
+      backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 65vh;
+      justify-content: space-between;
+    }
+
+    /* Top – logo + identity */
+    .card-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 2px solid #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+    }
+
+    .identity-name {
+      font-family: "Cormorant Garamond", "Times New Roman", serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .identity-title {
+      font-size: 0.96rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .divider {
+      margin: 10px auto 2px;
+      width: 64px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e5e5e5, transparent);
+      opacity: 0.8;
+    }
+
+    /* Middle – info block */
+    .info-block {
+      margin-top: 4px;
+      padding: 14px 13px 12px;
+      border-radius: 16px;
+      background: rgba(7, 7, 9, 0.95);
+      border: 1px solid rgba(75, 85, 99, 0.55);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .info-value {
+      font-size: 0.9rem;
+      text-align: right;
+      color: var(--text-main);
+      word-break: break-word;
+      max-width: 70%;
+    }
+
+    .info-value a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .info-value a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Bottom – actions */
+    .card-bottom {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .primary-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #f9fafb;
+      color: #050506;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .primary-cta span.icon {
+      font-size: 1.1rem;
+      transform: translateY(1px);
+    }
+
+    .primary-cta:hover {
+      background: #e5e5e5;
+    }
+
+    @media (min-width: 640px) {
+      body {
+        padding: 40px;
+      }
+
+      .business-card {
+        padding: 30px 26px 24px;
+        max-height: 720px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DIGITAL BUSINESS CARD – RAWAND KAADAN -->
+  <main class="card-page" aria-label="Digital business card for Rawand Kaadan">
+    <section class="card-border">
+      <article class="business-card">
+        <header class="card-top">
+          <!-- Make sure rk-logo.png is in the same folder -->
+          <div class="avatar">
+            <img src="rk-logo.png" alt="RK – Rawand Kaadan logo">
+          </div>
+
+          <div>
+            <div class="identity-name">Rawand Kaadan</div>
+            <div class="identity-title">Business Consultant</div>
+            <div class="divider"></div>
+          </div>
+        </header>
+
+        <section class="info-block" aria-label="Contact details">
+          <div class="info-row">
+            <div class="info-label">Email</div>
+            <div class="info-value">
+              <a href="mailto:rawand.m.kaadan@gmail.com">
+                rawand.m.kaadan@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-label">Phone / WhatsApp</div>
+            <div class="info-value">
+              <a href="tel:+96565105431">
+                +965 6510 5431
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <footer class="card-bottom">
+          <a href="mailto:rawand.m.kaadan@gmail.com" class="primary-cta">
+            <span>Contact Rawand</span>
+            <span class="icon">↗</span>
+          </a>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+</body>
+</html>
